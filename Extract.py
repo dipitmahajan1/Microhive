@@ -16,7 +16,7 @@ import re
 class Extract :
     
     # Create function to extract text
-    def text_extraction(self,element):
+    def text_extraction(self,element):                                               # New commit put old file that didn't have self keyword                                           
         # Extracting the text from the in line text element
         line_text = element.get_text()
         
