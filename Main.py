@@ -286,19 +286,19 @@ if __name__ == '__main__':
         extracontent = get_extracontent(paper)
 
         merge_dict = merge_nested_dicts(footer_per_page, info_per_page)
-        final_dict = extracontent.update(merge_dict)                                     # We have final dictionary with all scraped information from paper
+        extracontent.update(merge_dict)                                            # We have final dictionary with all scraped information from paper
 
         # writing dictionary into json file 
         img_path = '/Users/dipit.mahajan/Micro-Hive /Images'
         base_path = '/Users/dipit.mahajan/Micro-Hive'
-        file_name = 'paper' + str(number)
-        file_path = f'{base_path}/{file_name}.json'
+        file_name = 'paper' + str(number) + '.json'
+        #file_path = f'{base_path}/{file_name}.json'
         # Open the file in write mode ('w') and write the JSON data
-        with open(file_path, 'w') as file:
-            json.dump(final_dict, file, indent=4)
+        with open(file_name, 'w') as file:
+            json.dump(extracontent, file, indent=4)                                
 
         #connecting to data lake and storing json file. This will trigger lambda and store all information in DynamoDB
-        connect_aws(f'{file_name}.json',f'{file_name}.json') 
+        connect_aws(file_name,file_name) 
         #dumping all the meta data and image files in seprate folder in data lake (s3)
         upload_folder(img_path)
 
