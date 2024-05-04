@@ -16,7 +16,7 @@ import re
 class Extract :
     
     # Create function to extract text
-    def text_extraction(element):
+    def text_extraction(self,element):
         # Extracting the text from the in line text element
         line_text = element.get_text()
         
