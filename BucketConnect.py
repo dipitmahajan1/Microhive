@@ -3,8 +3,8 @@ import os
 
 AWS_S3_BUCKET_NAME = 'microhive'
 AWS_REGION = 'eu-west-2'
-AWS_ACCESS_KEY = 'AKIAW5GFZFYMCOZ6FO4W'
-AWS_SECRET_KEY = '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'
+AWS_ACCESS_KEY = ''
+AWS_SECRET_KEY = ''
 
 # LOCAL_FILE = 'paper1.json'
 # NAME_FOR_S3 = 'paper1.json'
